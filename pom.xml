@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>ru.alidi.muchnik.</groupId>
+	<artifactId>phonebook</artifactId>
+	<version>1.0-SNAPSHOT</version>
+
+	<name>PhonebookApp</name>
+	<description>### Readme ###
+
+		This is a web-application that implements simple CRUD interface, allowing user to
+		create, read, update, delete and search over contacts from database.
+
+		It is realization of test assignment for ALIDI company.
+
+		### Task
+
+		Create a web-application using spring-boot, hibernate, postgres
+		which references phone book containing fields: name, phone type and phone number.
+		Also app should have ability to delete, edit, read and search over this contacts.
+
+		### Install and run
+
+		1. Install postgresql (im using PostgreSQL 10).
+		2. Create empty database named 'phonebook'
+		3. Restore database from backup (which you can get from /resources/db/phonebook.sql)
+			3.1. Run CMD, go to your postgres folder bin (like C:\Programs\PostgreSQL\bin)
+			3.2. Restore database with command:
+					psql -p 4444 -U postgres phonebook C:/phonebook.sql
+			Where -p 4444 is a port, -h yourhost, -U postgres is a user
+		4. Fill the actual database settings in /resources/application.properties
+
+		Pay attention im using not a standart port!
+		- spring.datasource.url = jdbc:postgresql://localhost:4444/phonebook
+		- spring.datasource.username = postgres
+		- spring.datasource.password = 1234
+
+		4. Run the application with maven command: «mvn spring-boot:run»
+		It will deploy project on tomcat embedded server right from your IDE.
+		5. Go to http://localhost.8080
+
+		##### Contacts
+
+		muchnik.ak@gmail.com
+	</description>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.7.RELEASE</version>
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<dependencies>
+
+        <!-- Web application -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+		<!-- JPA -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+
+		<!-- Postgres -->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+
+		<!-- JSTL -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+		</dependency>
+
+        <!-- Tomcat embedded -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Tomcat Jasper JSP engine -->
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- JSP test -->
+        <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-test</artifactId>
+        <scope>test</scope>
+        </dependency>
+
+        <!-- JUnit -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+
+		<!-- Bootstrap -->
+			<dependency>
+				<groupId>org.webjars</groupId>
+				<artifactId>bootstrap</artifactId>
+				<version>3.3.7</version>
+			</dependency>
+
+    </dependencies>
+
+	<build>
+        <finalName>PhonebookApp</finalName>
+		<plugins>
+			<plugin>
+				<!-- Package as an executable jar/war -->
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+
+</project>

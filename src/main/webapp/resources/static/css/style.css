@@ -1,0 +1,66 @@
+*, body, html {
+    margin: 0;
+}
+
+#main {
+    width: 800px;
+    margin: 0 auto;
+}
+
+#update{
+    width: 400px;
+    margin: 0 auto;
+}
+
+#search_form {
+    float: left;
+    margin-top: 10px;
+}
+
+.table_inner {
+    margin: 0 !important;
+    width: 200px;
+}
+
+.btn_new_contact {
+    float: right;
+}
+
+#btn_delete{
+    float: right;
+    margin-top: 2px;
+}
+
+.table_tr {
+    cursor: pointer;
+}
+
+.tr_numbers_details > td {
+    padding-bottom: 4px;
+    padding-top: 4px;
+    border-bottom: solid 1px #ddd;
+}
+
+.tr_numbers_details:first-child > td {
+    padding-top: 0;
+}
+
+.tr_numbers_details:last-child > td {
+    border-bottom: none;
+}
+
+em{
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.p_info {
+    padding: 5px 0 5px 0;
+    text-align: center;
+}
+
+.form-group.required .control-label:after {
+    content: "*";
+    color: red;
+    font-size: 15px;
+}
